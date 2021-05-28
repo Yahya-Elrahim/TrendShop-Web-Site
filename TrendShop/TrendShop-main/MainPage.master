@@ -1,0 +1,456 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainPage.master.cs" Inherits="MainPage" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server" >
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Trendshop-AnaSayfa</title>
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type='text/css' runat="server">
+    <link href="~/css/effects.css" rel="stylesheet" type='text/css' runat="server">
+    <link href="~/css/jollyicons.css" rel="stylesheet" type='text/css' runat="server">
+    <link href="~/css/owl.carousel.css" rel="stylesheet" type='text/css' runat="server">
+    <link href="~/css/bootstrap.css" rel="stylesheet" type='text/css' runat="server">
+    <link href="~/css/style.css" rel="stylesheet" type='text/css' runat="server">
+    <link rel="stylesheet" type="text/css" href="~/css/extralayers.css" media="screen" runat="server" /> 
+    <link rel="stylesheet" type="text/css" href="~/rs-plugin/css/settings.css" media="screen" runat="server"/>
+
+    <link href="~/css/glasscase.css" type='text/css' rel="stylesheet" runat="server">
+    <link href="~/css/flexslider.css" type='text/css' rel="stylesheet" runat="server">
+   
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    
+    <asp:ContentPlaceHolder id="head" runat="server"/>
+
+</head>
+<body>
+
+    <form id="form1" runat="server">
+
+     <div id="wrapper">
+
+       <div class="navbar navbar-inverse navbar-fixed-top navbar-custom">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".topbar">
+                        <span class="icon-menu"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse topbar">
+                    <ul class="nav navbar-nav">
+                       <li><asp:LinkButton CssClass="active" OnClick="On_Click" ID="LinkButton6" runat="server">Ana Sayfa</asp:LinkButton></li>  
+                        <li><asp:LinkButton CssClass="active" OnClick="LinkButton5_Click" ID="LinkButton5" runat="server">Alıiveriş Sepeti</asp:LinkButton></li> 
+                        <li><a href="#">İletişim</a></li>
+                       
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right"> 
+                        <li class="dropdown nav-bar-dropdown">
+                        <asp:LinkButton OnClick="Unnamed_Click" runat="server"><span class='icon-cart'></span>
+                            <asp:Label ID="LabelItems" runat="server" Text="car 1 ıtem"></asp:Label></asp:LinkButton>    
+
+                        </li>
+                   </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <asp:LinkButton OnClick="Unnamed_Click" runat="server"><asp:Image runat="server"  Width="15" Height="15" ImageUrl="~/images/avatar.png" />
+                                    <asp:Label ID="LabelAccount" runat="server" Text=""></asp:Label></asp:LinkButton>    
+                               
+
+                                </li>
+                     
+                            </ul>
+                    
+
+         
+                </div>
+            </div>
+        </div>
+
+
+      <header class="header-wrapper clearfix">
+            <div class="container">
+                <div class="menu-wrapper wps dark-style">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+                      
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".default-menu">
+                        <span class="icon-menu"></span>
+                        </button>    
+                            <asp:LinkButton ID="brand" OnClick="On_Click" runat="server"><asp:Image runat="server" ImageUrl="~/images/logo.png" /></asp:LinkButton>
+  
+                        </div>
+                        <div class="navbar-collapse collapse default-menu">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown"><asp:LinkButton ID="LinkButton1" OnClick="On_Click"  runat="server">Kadın</asp:LinkButton></li>
+                                <li class="dropdown"> <asp:LinkButton ID="LinkButton2" OnClick="On_Click" runat="server">Erkek</asp:LinkButton></li>
+                                <li class="dropdown"> <asp:LinkButton ID="LinkButton3" OnClick="On_Click" runat="server">Kız Çocuk</asp:LinkButton></li>
+                                <li class="dropdown"> <asp:LinkButton ID="LinkButton4" OnClick="On_Click" runat="server">Erkek Çocuk</asp:LinkButton></li>
+                              
+                            </ul>
+
+
+                           
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <span class="social-icons pull-right">
+                                        <a href="#" title=""><i class="icon-facebook"></i></a>
+                                        <a href="#" title=""><i class="icon-twitter"></i></a>
+                                        <a href="#" title=""><i class="icon-gplus"></i></a>
+                                        <a href="#" title=""><i class="icon-pinterest"></i></a>
+                                        <a href="#" title=""><i class="icon-youtube"></i></a>
+                                        <a href="#" title=""><i class="icon-yelp"></i></a>
+                                        <a href="#" title=""><i class="icon-blogger"></i></a>
+                                        <a href="#" title=""><i class="icon-deviantart"></i></a>
+                                    </span><!-- end social -->
+   
+
+                                    <form class="form-inline" role="form">
+                                        <div class="form-group">
+                                            <label for="search_input" class="sr-only">Search for stories & items</label>
+                                            <input type="text" class="form-control" id="search_input" placeholder="Search for stories & items">
+                                        </div>
+                                        
+                                    </form>
+                                  
+                                </li>
+                            </ul>
+                           
+                            
+                        </div>
+                    </nav>
+                </div>
+              
+
+                </div>
+             
+        </header>
+
+     
+  
+
+        <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        </div>
+
+           
+        <footer class="footer-wrapper clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="widget clearfix">
+                            <div class="widget-title">
+                                <h3><i class="icon-bag"></i> Süper Fırsatlar</h3>
+                            </div><!-- end widget-title -->
+                            <div class="featured-posts row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            <div class="alignleft">
+                                                <a href="menPage.aspx"><img class="img-responsive img-thumbnail" src="demos/featured_05.jpg" alt=""></a>
+                                            </div>
+                                            <h4><a title="" href="single-shop.html">Erkek Pantolon</a></h4>
+                                            <span class="meta">
+                                                <span class="rating">
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                </span>
+                                            </span><!-- end meta -->
+                                            <a class="readmore" href="menPage.aspx" title="">Alişverişe Başla ></a>
+                                        </li>
+
+                                        <li>
+                                            <div class="alignleft">
+                                                <a href="girlsPage.aspx"><img class="img-responsive img-thumbnail" src="demos/featured_22.jpg" alt=""></a>
+                                            </div>
+                                            <h4><a title="" href="girlsPage.aspx">Pembe Dik Yaka Basic Örme T-shirt</a></h4>
+                                            <span class="meta">
+                                                <span class="rating">
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star-empty'></span>
+                                                    <span class='glyphicon glyphicon-star-empty'></span>
+                                                </span>
+                                            </span><!-- end meta -->
+                                            <a class="readmore" href="girlsPage.aspx" title="">Alişverişe Başla ></a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>
+                                            <div class="alignleft">
+                                                <a href="menPage.aspx"><img class="img-responsive img-thumbnail" src="demos/featured_04.jpg" alt=""></a>
+                                            </div>
+                                            <h4><a title="" href="menPage.aspx">Erkek Mavi Ekoseli Oduncu Gömlek</a></h4>
+                                            <span class="meta">
+                                                <span class="rating">
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star-empty'></span>
+                                                </span>
+                                            </span><!-- end meta -->
+                                            <a class="readmore" href="menPage.aspx" title="">Alişverişe Başla ></a>
+                                        </li>
+
+                                        <li>
+                                            <div class="alignleft">
+                                                <a href="menPage.aspx"><img class="img-responsive img-thumbnail" src="demos/featured_05.jpg" alt=""></a>
+                                            </div>
+                                            <h4><a title="" href="menPage.aspx">Fit Siyah Takım Elbisel</a></h4>
+                                            <span class="meta">
+                                                <span class="rating">
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star'></span>
+                                                    <span class='glyphicon glyphicon-star-empty'></span>
+                                                    <span class='glyphicon glyphicon-star-empty'></span>
+                                                </span>
+                                            </span><!-- end meta -->
+                                            <a class="readmore" href="menPage.aspx" title="">Alişverişe Başla ></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- end featured-posts -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="widget clearfix">
+                            <div class="widget-title">
+                                <h3><i class="icon-cart"></i> Kategoriler</h3>
+                            </div><!-- end widget-title -->
+                            <div class="blog_categories clearfix">   
+                                <ul>  
+                                    <li><a href="#">Kadın <span>(20)</span></a></li>
+                                    <li><a href="#">Erkek <span>(10)</span></a></li>
+                                    <li><a href="#">Erkek Çocuğk <span>(10)</span></a></li>
+                                    <li><a href="#">Kız Çocuk <span>(10)</span></a></li>
+                                    <li><a href="#">Bebek <span>(10)</span></a></li>
+                                   
+                                </ul>
+                            </div><!-- end blog_categories --> 
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="widget clearfix">
+                            <div class="widget-title">
+                                <h3><i class="icon-mail"></i> Üye Değil misiniz?</h3>
+                            </div><!-- end widget-title -->
+                            <div class="newsletter_form clearfix"> 
+                                <p>Hemen üye olun, indirimli alışverişin keyfini çıkarın!</p>  
+                                <fieldset class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <label for="newsletter_input" class="sr-only">Üye ol</label>
+                                        <input type="text" class="form-control" id="newsletter_input" placeholder="E-Posta adresi">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Üye ol</button>
+                                </fieldset>
+                                <span class="social-icons">
+                                    <a href="#" title=""><i class="icon-facebook"></i></a>
+                                    <a href="#" title=""><i class="icon-twitter"></i></a>
+                                    <a href="#" title=""><i class="icon-gplus"></i></a>
+                                    <a href="#" title=""><i class="icon-pinterest"></i></a>
+                                    <a href="#" title=""><i class="icon-youtube"></i></a>
+                                    <a href="#" title=""><i class="icon-yelp"></i></a>
+                                    <a href="#" title=""><i class="icon-blogger"></i></a>
+                                    <a href="#" title=""><i class="icon-deviantart"></i></a>
+                                </span>
+
+                                <span class="payment-method">
+                                    <i class="icon-cc-paypal"></i>
+                                    <i class="icon-cc-visa"></i>
+                                    <i class="icon-cc-mastercard"></i>
+                                    <i class="icon-cc-stripe"></i>
+                                    <i class="icon-cc-amex"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <section class="copyrights">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="copymessage clearfix">
+                            <p>© Telif Hakkı 2012-2021 trendshop.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <ul class="footer-menu clearfix pull-right">
+                            <li><a href="#" title="">Ana Sayfa</a></li>
+                            <li><a href="#" title="">Alişveriş</a></li>
+                            <li><a href="#" class="backtotop" title=""><i class="icon-up-open-1"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+   </form>
+
+
+
+
+      <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/retina.js"></script>
+    <script src="js/jquery.stellar.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        (function ($) {
+            "use strict";
+            // Carousel Widgets
+            $('#bestsellermini, #editorpicksmini').owlCarousel({
+                loop: false,
+                margin: 10,
+                lazyLoad: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 2,
+                        nav: false
+                    },
+                    1000: {
+                        items: 2,
+                        nav: true,
+                        loop: false
+                    }
+                }
+            })
+            $('#owl-testimonial').owlCarousel({
+                loop: false,
+                margin: 10,
+                lazyLoad: true,
+                dots: true,
+                nav: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    600: {
+                        items: 2,
+                    },
+                    1000: {
+                        items: 2,
+                        loop: false
+                    }
+                }
+            })
+        })(jQuery);
+    </script>
+
+    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>   
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('.tp-banner').show().revolution({
+                dottedOverlay: "none",
+                delay: 16000,
+                startwidth: 1170,
+                startheight: 550,
+                hideThumbs: 200,
+                thumbWidth: 100,
+                thumbHeight: 50,
+                thumbAmount: 5,
+                navigationType: "none",
+                navigationArrows: "solo",
+                navigationStyle: "preview3",
+                touchenabled: "on",
+                onHoverStop: "on",
+                swipe_velocity: 0.7,
+                swipe_min_touches: 1,
+                swipe_max_touches: 1,
+                drag_block_vertical: false,
+                parallax: "mouse",
+                parallaxBgFreeze: "on",
+                parallaxLevels: [7, 4, 3, 2, 5, 4, 3, 2, 1, 0],
+                keyboardNavigation: "off",
+                navigationHAlign: "center",
+                navigationVAlign: "bottom",
+                navigationHOffset: 0,
+                navigationVOffset: 20,
+                soloArrowLeftHalign: "left",
+                soloArrowLeftValign: "center",
+                soloArrowLeftHOffset: 20,
+                soloArrowLeftVOffset: 0,
+                soloArrowRightHalign: "right",
+                soloArrowRightValign: "center",
+                soloArrowRightHOffset: 20,
+                soloArrowRightVOffset: 0,
+                shadow: 0,
+                fullWidth: "on",
+                fullScreen: "off",
+                spinner: "spinner4",
+                stopLoop: "off",
+                stopAfterLoops: -1,
+                stopAtSlide: -1,
+                shuffle: "off",
+                autoHeight: "off",
+                forceFullWidth: "off",
+                hideThumbsOnMobile: "off",
+                hideNavDelayOnMobile: 1500,
+                hideBulletsOnMobile: "off",
+                hideArrowsOnMobile: "off",
+                hideThumbsUnderResolution: 0,
+                hideSliderAtLimit: 0,
+                hideCaptionAtLimit: 0,
+                hideAllCaptionAtLilmit: 0,
+                startWithSlide: 0,
+                videoJsPath: "rs-plugin/videojs/",
+                fullScreenOffsetContainer: ""
+            });
+        }); //ready
+        </script>  
+
+
+     
+</body>
+
+</html>
